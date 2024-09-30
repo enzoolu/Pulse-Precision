@@ -16,7 +16,8 @@ while True:
 
     if resp == 1:
         while True:
-            opcoes = (f'Opções: \n'
+            opcoes = (f'\n'
+                      f'Opções: \n'
                     f'1 - Ver usuários cadastrados\n'
                     f'2 - Cadastrar novo usuário\n'
                     f'3 - Editar informações de usuário\n'
@@ -35,7 +36,8 @@ while True:
 
     elif resp == 2:
         while True:
-            login = (f'1 - Fazer Login\n'
+            login = (f'\n'
+                     f'1 - Fazer Login\n'
                      f'2 - Criar acesso\n'
                      f'3 - Voltar ao menu principal\n')
 
@@ -46,7 +48,8 @@ while True:
 
                 if nome != False:
                     while True:
-                        opcoes = (f'Opções: \n'
+                        opcoes = (f'\n'
+                                  f'Opções: \n'
                                   f'1 - Ver alunos atribuidos\n'
                                   f'2 - Avaliar aluno\n'
                                   f'4 - Sair do menu de tutor\n')
