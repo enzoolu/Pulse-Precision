@@ -36,9 +36,10 @@ while True:
     elif resp == 2:
         while True:
             login = (f'1 - Fazer Login\n'
-                     f'2 - Criar acesso\n')
+                     f'2 - Criar acesso\n'
+                     f'3 - Voltar ao menu principal\n')
 
-            resp = forca_resposta(login, list(range(1, 3)))
+            resp = forca_resposta(login, list(range(1, 4)))
 
             if resp == 1:
                 nome = autenticar_tutor(tutores)
@@ -70,8 +71,10 @@ while True:
 
                 else:
                     break
-            else:
+            elif resp == 2:
                 criar_acesso(tutores)
+            else:
+                break
 
     else:
         break
