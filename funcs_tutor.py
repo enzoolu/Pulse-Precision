@@ -35,29 +35,33 @@ def alunos_atribuidos(usuarios, tutor):
     return alunos_encontrados
 
 def avaliar_aluno(alunos):
-    print('Selecione um aluno(a): ')
-    for i in range(len(alunos)):
-        print(f'{i + 1} - {alunos[i]}')
+    if alunos:
+        print('Selecione um aluno(a): ')
+        for i in range(len(alunos)):
+            print(f'{i + 1} - {alunos[i]}')
 
-    aluno = int(forca_resposta('Selecione uma opção: ', list(range(1, len(alunos) + 1)))) - 1
+        aluno = int(forca_resposta('Selecione uma opção: ', list(range(1, len(alunos) + 1)))) - 1
 
-    criteios = [f'Precisão no Movimento: (0/10)\n', f'Precisão no Clique: (0/10)\n', f'Ritmo: (0/10)\n']
+        criteios = [f'Precisão no Movimento: (0/10)\n', f'Precisão no Clique: (0/10)\n', f'Ritmo: (0/10)\n']
 
-    notas = []
+        notas = []
 
-    for criteio in criteios:
-        nota = int(forca_resposta(criteio, list(range(0, 11))))
-        notas.append(nota)
+        for criteio in criteios:
+            nota = int(forca_resposta(criteio, list(range(0, 11))))
+            notas.append(nota)
 
-    media = (notas[0] * 0.5) + (notas[1] * 0.3) + (notas[2] * 0.2)
+        media = (notas[0] * 0.5) + (notas[1] * 0.3) + (notas[2] * 0.2)
 
-    if media >= 8:
-        nivel = 3
-    elif media >= 6 and media < 8:
-        nivel = 2
+        if media >= 8:
+            nivel = 3
+        elif media >= 6 and media < 8:
+            nivel = 2
+        else:
+            nivel = 1
+
+        print(f'Nivel Recomendado para o aluno {alunos[aluno]}: Nivel {nivel}')
+
     else:
-        nivel = 1
-
-    print(f'Nivel Recomendado para o aluno {alunos[aluno]}: Nivel {nivel}')
+        print('Nenhum aluno atribuido')
 
     return
