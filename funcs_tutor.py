@@ -54,7 +54,7 @@ def avaliar_aluno(alunos):
 
         if media >= 8:
             nivel = 3
-        elif media >= 6 and media < 8:
+        elif media >= 6:
             nivel = 2
         else:
             nivel = 1
