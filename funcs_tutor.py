@@ -1,11 +1,11 @@
-from func_geral import forca_resposta
+from func_geral import *
 
 def criar_acesso(tutores):
     print(f"\n--- Cadastrar Novo Tutor (ID: {len(tutores) + 1}) ---")
 
-    nome = input("Digite o nome: ")
-    email = input("Digite o e-mail: ")
-    universidade = input("Digite o nome da universidade: ")
+    nome = verifica_tipo("Digite o nome: ", 'str')
+    email = verifica_tipo("Digite o e-mail: ", 'str')
+    universidade = verifica_tipo("Digite o nome da universidade: ", 'str')
     senha = input("Digite a senha: ")
 
     tutores.append([nome, email, universidade, senha])
@@ -19,7 +19,7 @@ def autenticar_tutor(tutores):
         return False
 
     print("\n--- Login ---")
-    nome = input("Digite seu Nome: ")
+    nome = verifica_tipo("Digite seu Nome: ", 'str')
     senha = input("Digite sua senha: ")
 
     for info in tutores:
@@ -30,7 +30,7 @@ def autenticar_tutor(tutores):
     return False
 
 def alunos_atribuidos(usuarios, tutor):
-    alunos_encontrados = [aluno[0] for aluno in usuarios if aluno[4] == tutor]  # Nome dos alunos atribuídos a um tutor
+    alunos_encontrados = [aluno[0] for aluno in usuarios if aluno[4] == tutor]
 
     return alunos_encontrados
 

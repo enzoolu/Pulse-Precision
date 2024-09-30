@@ -1,4 +1,4 @@
-from func_geral import forca_resposta
+from func_geral import *
 def editar_usuario(usuarios):
     if not usuarios:
         print("Nenhum usuário cadastrado para editar.\n")
@@ -47,11 +47,11 @@ def exibir_usuarios(usuarios):
 def cadastrar_usuario(usuarios):
     print(f'\n--- Cadastrar Usuário {len(usuarios) + 1} ---\n')
 
-    nome = input('Digite o nome do usuário: ')
-    idade = int(input('Digite a idade do usuário: '))
-    email = input('Digite o email do usuário: ')
-    semestre = int(input('Digite o semestre do usuário: '))
-    tutor = input('Digite o tutor do usuário: ')
+    nome = verifica_tipo('Digite o nome do usuário: ', 'str')
+    idade = verifica_tipo('Digite a idade do usuário: ', 'int')
+    email = verifica_tipo('Digite o email do usuário: ', 'str')
+    semestre = verifica_tipo('Digite o semestre do usuário: ', 'int')
+    tutor = verifica_tipo('Digite o tutor do usuário: ', 'str')
 
     usuarios.append([nome, idade, email, semestre, tutor])
 
